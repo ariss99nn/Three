@@ -39,3 +39,13 @@ user.is_staff = True
 user.is_superuser = True
 user.save()
 exit()
+
+
+#Uso de el data frame puro o con los datos preprocesados para entrenar un modelo de Prediccion
+
+# Si solo quiero revisar los datos tal cual están en la BD:
+df = Cosecha_Dataframes.harvest_to_df()
+
+# Si quiero entrenar un modelo:
+df = Cosecha_Dataframes.harvest_to_df(preprocessed=True)
+modelo.fit(df, etiquetas)
